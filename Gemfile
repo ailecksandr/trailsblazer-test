@@ -10,17 +10,27 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'hamlit'
 gem 'hamlit-rails'
+gem 'hamlit'
 gem 'html2haml'
 
 #-----------------------
 gem 'trailblazer-rails'
 gem 'trailblazer-loader'
 gem 'reform', '~> 2.1.0'
+gem 'trailblazer-cells'
+gem 'cells-rails'
+gem 'haml', github: 'haml/haml', ref: '7c7c169'
+gem 'cells-hamlit'
+gem 'foundation-rails'
+gem 'rails-timeago', '~> 2.0'
+
 
 group :test do
+  gem 'minitest-spec-context'
   gem 'minitest-rails-capybara'
+  gem 'database_cleaner'
+  gem 'minitest-around'
 end
 #-----------------------
 

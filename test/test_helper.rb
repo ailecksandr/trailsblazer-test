@@ -1,8 +1,6 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
 require 'minitest/rails/capybara'
-
-class ActiveSupport::TestCase
-  fixtures :all
-end
+require 'trailblazer/rails/test/integration'
+require 'support/database_cleaner'
+require 'support/cell_helper'
