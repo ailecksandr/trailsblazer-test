@@ -1,0 +1,1 @@
+# Trivial project with Trailblazer architecture
