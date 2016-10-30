@@ -7,7 +7,7 @@ class ThingIntegrationTest < Trailblazer::Test::Integration
 
       page.wont_have_css "form #thing_name[disabled]"
       click_button 'Create'
-      page.must_have_css '.has-error'
+      page.must_have_css '.field_with_errors'
     end
 
     it 'update' do

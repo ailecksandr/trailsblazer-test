@@ -24,4 +24,8 @@ class ThingsController < ApplicationController
 
     render action: :new
   end
+
+  def show
+    @thing = Thing.find_by_id(params[:id])
+  end
 end

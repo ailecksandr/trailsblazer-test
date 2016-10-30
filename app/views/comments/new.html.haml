@@ -1,0 +1,15 @@
+= form_for [@thing, @form] do |f|
+  = f.label :body
+  = f.text_area :body
+
+  = f.label :weight
+  = f.collection_radio_buttons :weight, *@form.weights
+
+  = f.label :user_emai
+  = f.fields_for :user do |u|
+    = u.text_field :email
+
+  = f.submit 'Create'
+  = link_to 'Cancel', things_path
+
+= @form.errors.messages

@@ -1,4 +1,4 @@
-class Thing < ActiveRecord::Base
+class Thing < ApplicationRecord
   class Create < Trailblazer::Operation
     include Model
     model Thing, :create

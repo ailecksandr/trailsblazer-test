@@ -1,13 +1,11 @@
-= form_for form, html: { class: 'form form-horizontal thing' } do |f|
-  .form-group
-    = f.label :name, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :name, class: 'form-control', required: true, disabled: form.readonly?(:name)
-  .form-group
-    = f.label :description, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :description, class: 'form-control', required: true
-  .form-group
-    .col-lg-offset-2.col-lg-10
-      = f.submit 'Create', class: 'btn btn-primary'
-      = link_to 'Cancel', things_path, :class => 'btn btn-default'
+= form_for form do |f|
+    = f.label :name
+    = f.text_field :name, required: true, disabled: form.readonly?(:name)
+
+    = f.label :description
+    = f.text_field :description, required: true
+
+    = f.submit 'Create'
+    = link_to 'Cancel', things_path
+
+= form.errors.messages

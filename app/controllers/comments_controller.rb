@@ -1,0 +1,18 @@
+class CommentsController < ApplicationController
+  def create
+    run Comment::Create do |op|
+      flash[:notice] = "Created comment for \"#{op.thing.name}\""
+
+      return redirect_to thing_path(op.thing)
+    end
+
+    @thing = Thing.find(params[:thing_id])
+    render :new
+  end
+
+  def new
+    @thing = Thing.find(params[:thing_id])
+
+    form Comment::Create
+  end
+end

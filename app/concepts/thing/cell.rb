@@ -11,7 +11,7 @@ class Thing::Cell < Cell::Concept
   end
 
   def classes
-    classes = %w(large-3 columns)
+    classes = %w(box small-3 columns)
     classes << 'end' if options[:last] == model
     classes
   end
@@ -22,6 +22,14 @@ class Thing::Cell < Cell::Concept
 
   def name_link
     link_to name, model
+  end
+
+  def edit_link
+    link_to 'Edit', edit_thing_path(model)
+  end
+
+  def new_comment_link
+    link_to 'Add comment', new_thing_comment_path(model)
   end
 
   class Grid < Cell::Concept
